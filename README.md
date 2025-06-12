@@ -4,7 +4,7 @@
 Dicee is a simple web-based dice game built using HTML, CSS, and JavaScript. It simulates rolling two dice and displays the winner based on random values. When the user visits the page for the first time, it shows the text "Refresh Me". On reloading the page, the app rolls the dice and announces the winner.
 
 ## Live Demo
-Check out the live version here: [Live Demo](https://05-Jagritii.github.io/dicee)
+Check out the live version here: [Live Demo](https://05-jagritii.github.io/Dice-Game/)
 ![{214A2B04-382B-49FB-9945-1BBBD494162F}](https://github.com/user-attachments/assets/ebc0abbd-1ab5-44c2-9c47-208ca06e435b)
 
 ## Features
