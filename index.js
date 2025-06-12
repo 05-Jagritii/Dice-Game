@@ -1,21 +1,29 @@
-function rollDice() {
-  var randomNumber1 = Math.floor(Math.random() * 6) + 1;
-  var randomImgSrc1 = "./images/dice" + randomNumber1 + ".png";
-  document.querySelectorAll("img")[0].setAttribute("src", randomImgSrc1);
+function rollDiceAndDisplayResult() {
+  const randomNumber1 = Math.floor(Math.random() * 6) + 1;
+  const randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
-  var randomNumber2 = Math.floor(Math.random() * 6) + 1;
-  var randomImgSrc2 = "./images/dice" + randomNumber2 + ".png";
-  document.querySelectorAll("img")[1].setAttribute("src", randomImgSrc2);
+  const randomImgSrc1 = "./images/dice" + randomNumber1 + ".png";
+  const randomImgSrc2 = "./images/dice" + randomNumber2 + ".png";
 
-  var resultText = "";
+  document.querySelector(".img1").setAttribute("src", randomImgSrc1);
+  document.querySelector(".img2").setAttribute("src", randomImgSrc2);
+
+  const heading = document.getElementById("main-heading");
 
   if (randomNumber1 > randomNumber2) {
-    resultText = "Player 1 Wins";
+    heading.innerHTML = "Player 1 Wins";
   } else if (randomNumber2 > randomNumber1) {
-    resultText = "Player 2 Wins";
+    heading.innerHTML = "Player 2 Wins";
   } else {
-    resultText = "Draw!";
+    heading.innerHTML = "Draw!";
   }
-
-  document.getElementById("main-heading").textContent = resultText;
 }
+
+window.onload = function () {
+  if (localStorage.getItem("hasVisitedBefore")) {
+    rollDiceAndDisplayResult();
+  } else {
+    document.getElementById("main-heading").innerHTML = "Refresh Me";
+    localStorage.setItem("hasVisitedBefore", "true");
+  }
+};
